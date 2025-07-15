@@ -1,10 +1,13 @@
 h1 {
-    display : flexbox;
+    display : flex;
     justify-content: center;
-    border-radius: 3px;
-    border : dotted, #B6CB9E;
+    border : 3px, dotted, #B6CB9E;
 };
 
 body {
     background-color : #D1F0B1;
 };
+
+.table {
+    background-color: #D1F0B1;
+}
