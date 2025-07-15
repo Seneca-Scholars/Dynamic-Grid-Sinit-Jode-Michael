@@ -1,3 +1,14 @@
 h1 {
-    backround-color : black
+    display : flexbox;
+    justify-content: center;
+    border-radius: 3px;
+    border : dotted, #B6CB9E
+}
+
+body {
+    Backround-color : #D1F0B1
+}
+
+.table {
+
 }
