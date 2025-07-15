@@ -8,6 +8,6 @@ body {
     background-color : #D1F0B1;
 };
 
-.table {
-    background-color: #D1F0B1;
-}
+table {
+    border : 5px, solid, black;
+};
