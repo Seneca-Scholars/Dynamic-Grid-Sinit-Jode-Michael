@@ -41,3 +41,9 @@ th:hover {
     border: 5px, solid, #FFCC00;
     transition: 0.4s;
 }
+
+.jeapordy-button {
+    color :#cccccc;
+    background-color: #060ce9;
+    border : solid, #060ce9; 
+}
