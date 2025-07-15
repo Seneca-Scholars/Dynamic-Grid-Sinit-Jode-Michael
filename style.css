@@ -13,7 +13,7 @@ table {
     border : 5px, solid, black,;
     width : 100%;
     height : 90%;
-    border-collapse: collapse;
+    border-spacing: 0px; 
 };
 
 td {
@@ -24,6 +24,20 @@ tr {
     text-align: center;
 }
 
+td {
+    border: 5px solid black;
+}
 
+th {
+    border: 5px solid black;
+}
 
+td:hover {
+    border: 5px, solid, #FFCC00;
+    transition: 0.4s;
+}
 
+th:hover {
+    border: 5px, solid, #FFCC00;
+    transition: 0.4s;
+}
