@@ -37,24 +37,15 @@ const data = [
 
 const table = document.querySelector(".body");
 
-const tableheader = 
-
-/*const tableHeaderRow = document.createElement("tr");
-
-const div = document.querySelector("div.gameboard")
-
+const headerRow = document.createElement("tr");
 const headers = ["ID", "Name", "Department", "Role", "Start Date"];
-
-const createGameboard = () => {
-  
-}*/
 headers.forEach(headerText => {
   const th = document.createElement("th");
   th.textContent = headerText;
-  tableHeaderRow.appendChild(th);
+  headerRow.appendChild(th);
 });
 
-table.appendChild(tableHeaderRow);
+table.appendChild(headerRow);
 
 data.forEach(rowData => {
   const row = document.createElement("tr");
@@ -81,5 +72,3 @@ data.forEach(rowData => {
 
   table.appendChild(row);
 });
-
-
