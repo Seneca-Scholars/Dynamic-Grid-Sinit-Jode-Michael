@@ -1,74 +1,83 @@
-const data = [
-{
-    id: 1,
-    name: "Alice Smith",
-    department: "Engineering",
-    role: "Software Engineer",
-    startDate: "2022-03-15"
-},
-{
-    id: 2,
-    name: "Bob Johnson",
-    department: "Marketing",
-    role: "Content Strategist",
-    startDate: "2021-11-07"
-},
-{
-    id: 3,
-    name: "Carla Ruiz",
-    department: "HR",
-    role: "HR Manager",
-    startDate: "2020-05-22"
-},
-{
-    id: 4,
-    name: "Daniel Lee",
-    department: "Finance",
-    role: "Accountant",
-    startDate: "2023-01-10"
-},
-{
-    id: 5,
-    name: "Emma Patel",
-    department: "Engineering",
-    role: "QA Analyst",
-    startDate: "2022-08-01"
-}];
+const gameDiv = document.querySelector("div.gameboard");
 
-const table = document.querySelector(".body");
+const tableHeaders = ["Enter Topic", "Enter Topic", "Enter Topic", "Enter Topic", "Enter Topic"];
 
-const headerRow = document.createElement("tr");
-const headers = ["ID", "Name", "Department", "Role", "Start Date"];
-headers.forEach(headerText => {
-  const th = document.createElement("th");
-  th.textContent = headerText;
-  headerRow.appendChild(th);
-});
+const gameBoardData = [
+    {
+        [tableHeaders[0]]: "100",
+        [tableHeaders[1]]: "100",
+        [tableHeaders[2]]: "100",
+        [tableHeaders[3]]: "100",
+        [tableHeaders[4]]: "100"
+    }, 
+    {
+        [tableHeaders[0]]: "200",
+        [tableHeaders[1]]: "200",
+        [tableHeaders[2]]: "200",
+        [tableHeaders[3]]: "200",
+        [tableHeaders[4]]: "200"
+    }, 
+    {
+        [tableHeaders[0]]: "300",
+        [tableHeaders[1]]: "300",
+        [tableHeaders[2]]: "300",
+        [tableHeaders[3]]: "300",
+        [tableHeaders[4]]: "300"
+    }, 
+    {
+        [tableHeaders[0]]: "400",
+        [tableHeaders[1]]: "400",
+        [tableHeaders[2]]: "400",
+        [tableHeaders[3]]: "400",
+        [tableHeaders[4]]: "400"
+    }, 
+    {
+        [tableHeaders[0]]: "500",
+        [tableHeaders[1]]: "500",
+        [tableHeaders[2]]: "500",
+        [tableHeaders[3]]: "500",
+        [tableHeaders[4]]: "500"
+    }];
 
-table.appendChild(headerRow);
+const createGameboardTable = () => {
+    while (gameDiv.firstChild) gameDiv.removeChild(gameDiv.firstChild);
 
-data.forEach(rowData => {
-  const row = document.createElement("tr");
+    const gameboardTable = document.createElement('table');
+    gameboardTable.className = 'gameboardTable';
 
-  const idCell = document.createElement("td");
-  idCell.textContent = rowData.id;
-  row.appendChild(idCell);
+    const gameboardTableHead = document.createElement('thead');
+    gameboardTableHead.className = 'gameboardTableHead';
 
-  const nameCell = document.createElement("td");
-  nameCell.textContent = rowData.name;
-  row.appendChild(nameCell);
+    const gameboardTableHeaderRow = document.createElement('tr');
+    gameboardTableHeaderRow.className = 'gameboardTableHeaderRow';
 
-  const departmentCell = document.createElement("td");
-  departmentCell.textContent = rowData.department;
-  row.appendChild(departmentCell);
+    tableHeaders.forEach(header => {
+        const gameHeader = document.createElement("th");
+        gameHeader.textContent = header;
+        gameboardTableHeaderRow.append(gameHeader);
+    });
 
-  const roleCell = document.createElement("td");
-  roleCell.textContent = rowData.role;
-  row.appendChild(roleCell);
+    gameboardTableHead.append(gameboardTableHeaderRow);
+    gameboardTable.append(gameboardTableHead);
 
-  const startDateCell = document.createElement("td");
-  startDateCell.textContent = rowData.startDate;
-  row.appendChild(startDateCell);
+    const gameboardTableBody = document.createElement('tbody');
+    gameboardTableBody.className = 'gameBoardTableBody';
+    gameboardTable.append(gameboardTableBody);
 
-  table.appendChild(row);
-});
+    gameBoardData.forEach(data => {
+        const gameboardTableBodyRow = document.createElement('tr');
+        gameboardTableBodyRow.className = 'gameBoardTableBodyRow';
+
+        tableHeaders.forEach(header => {
+        const gameboardCell = document.createElement("td");
+        gameboardCell.textContent = data[header];
+        gameboardTableBodyRow.append(gameboardCell);
+    });
+        
+        gameboardTableBody.append(gameboardTableBodyRow);
+    })
+
+    gameDiv.append(gameboardTable);
+}
+
+createGameboardTable();
